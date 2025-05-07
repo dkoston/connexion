@@ -235,7 +235,7 @@ class ConnexionMiddleware:
             start.
         :param strict_validation: When True, extra form or query parameters not defined in the
             specification result in a validation error. Defaults to False.
-        :param swagger_ui_options: Instance of :class:`options.ConnexionOptions` with
+        :param swagger_ui_options: Instance of :class:`options.SwaggerUIOptions` with
             configuration options for the swagger ui.
         :param uri_parser_class: Class to use for uri parsing. See :mod:`uri_parsing`.
         :param validate_responses: Whether to validate responses against the specification. This has
@@ -391,7 +391,7 @@ class ConnexionMiddleware:
         :param strict_validation: When True, extra form or query parameters not defined in the
             specification result in a validation error. Defaults to False.
         :param swagger_ui_options: A dict with configuration options for the swagger ui. See
-            :class:`options.ConnexionOptions`.
+            :class:`options.SwaggerUIOptions`.
         :param uri_parser_class: Class to use for uri parsing. See :mod:`uri_parsing`.
         :param validate_responses: Whether to validate responses against the specification. This has
             an impact on performance. Defaults to False.
@@ -402,8 +402,6 @@ class ConnexionMiddleware:
         :param kwargs: Additional keyword arguments to pass to the `add_api` method of the managed
             middlewares. This can be used to pass arguments to middlewares added beyond the default
             ones.
-
-        :return: The Api registered on the wrapped application.
         """
         if self.middleware_stack is not None:
             raise RuntimeError("Cannot add api after an application has started")

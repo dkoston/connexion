@@ -134,13 +134,15 @@ register an API defined by an OpenAPI (or Swagger) specification.
         .. code-block:: yaml
 
             openapi: "3.0.0"
-            ...
+            info:
+              title: Greeting application
+              version: 0.0.1
             paths:
               /greeting/{name}:
                 post:
                   operationId: run.post_greeting
                   responses:
-                    200:
+                    '200':
                       description: "Greeting response"
                       content:
                         text/plain:
